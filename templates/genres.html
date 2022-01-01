@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:wght@300;600&display=swap" rel="stylesheet">
+    <title>Listan</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+          <div class="message">
+            <h3>Välj en genre som du vill <br> basera listan på</h3>
+          </div>
+            
+
+            <!--Kanske hämta top 10 genres hos personen och visa?-->
+            <div class="switch">
+              <form action="{{ url_for('maps') }}" method="post">
+                <input name="switch" id="Pop" value="pop" type="radio" checked/>
+                <label for="Pop" class="switch__label">Pop</label>
+
+                <input name="switch" id="Rock" value="rock" type="radio" />
+                <label for="Rock" class="switch__label">Rock</label>
+
+                <input name="switch" id="Party" value="party" type="radio" />
+                <label for="Party" class="switch__label" >Party</label>
+
+                <input name="switch" id="House" value="house" type="radio" />
+                <label for="House" class="switch__label" >House</label>
+
+                <input name="switch" id="EDM" value="edm" type="radio" />
+                <label for="EDM" class="switch__label" >EDM</label>
+
+                <input name="switch" id="Dubstep" value="dubstep" type="radio" />
+                <label for="Dubstep" class="switch__label" >Dubstep</label>
+
+                <input name="switch" id="Metalcore" value="metalcore" type="radio" />
+                <label for="Metalcore" class="switch__label" >Metalcore</label>
+
+                <div class="switch__indicator" /></div>
+                <input type="submit" id="submit" value="OK">
+              </form>
+            </div>
+
+
+        </div>
+      </div>
+</body>
+</html>

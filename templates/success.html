@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:wght@300;600&display=swap" rel="stylesheet">
+    <title>Listan</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="main">
+
+              <div class="message">
+                <h3>Välkommen <b style="color: white !important;">{{ data[0] }}</b></h3>
+                <h4>Listan är en webbapplikationsom genererar en spellista baserat på en viss tid med hälp av Google maps API. Spellistan baseras också på en specifik genre som du väljer samt vilken typ av färdmedel man önksar.
+                  <br>
+                  <br>
+                  Spellistans längd kan variera med några minuter för att kompensera för oförutsädda handelser på resan.
+                  <br>
+                  <br>
+                  Tryck ok för att fortsätta!</h4>
+              </div>
+
+              <form action="{{ url_for('genres') }}" method="post">
+                <input style="display: none;" name="ok" id="ok" value="ok" type="radio" checked/>
+                <label style="display: none;" for="ok" class="switch__label">ok</label>
+                <input type="submit" id="submit" value="OK">
+              </form>
+
+        </div>
+        
+      </div>
+</body>
+</html>

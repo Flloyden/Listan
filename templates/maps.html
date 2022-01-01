@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='/js/maps.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:wght@300;600&display=swap" rel="stylesheet">
+    <title>Listan</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="main">
+
+          <div class="message">
+            <h3>Välj start och slutpunkt</h3>
+          </div>
+            
+          <div style="display: none">
+            <input id="origin-input" class="controls" type="text" placeholder="Sök efter en startdestination" value=""/>
+            <input id="destination-input" class="controls" type="text" placeholder="Sök efter en slutdestination" value=""/>
+      
+            <div id="mode-selector" class="controls">
+              <input type="radio" name="type" id="WALKING" checked="checked"/>
+              <label for="changemode-walking">Till fots</label>
+      
+              <input type="radio" name="type" id="BICYCLING" />
+              <label for="changemode-bicycling">Cykel</label>
+      
+              <input type="radio" name="type" id="TRANSIT" />
+              <label for="changemode-transit">Kollektivtrafik</label>
+      
+              <input type="radio" name="type" id="DRIVING" />
+              <label for="changemode-driving">Med bil</label>
+            </div>
+          </div>
+      
+          <div id="map"></div>
+
+          <h3>Tid: <b style="color: white !important;" id="headertag">0</b></h3>
+
+          <form action="{{ url_for('done') }}" method="post" style="text-align: center;">
+            <label for="number" style="color: white; display: none;">Ange tid (min):</label>
+            <input style="display: none;" type="number" id="number" name="number">
+            <input style="display: none;" type="text" id="city" name="city">
+            <input type="submit" id="submit" value="OK">
+          </form>
+
+        </div>
+
+      </div>
+
+      <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE&callback=initMap&libraries=places&v=weekly"
+        async
+      ></script>
+
+
+</body>
+</html>
