@@ -38,7 +38,7 @@ handler.py är den fil som behöver modifieras. Inom handler.py måste du ange d
 
 ### Lägg till Google maps API
 
-maps.html är den fil som behöver modifieras. Inom maps.html måste du ange din API nyckel på rad 58
+maps.html är den fil som behöver modifieras. Inom maps.html måste du ange din API nyckel på rad 59
 
 ### Callback URL
 Callback och porten listas som standard som http://127.0.0.1 och 5000. Om Callback-url lämnas som standard, måste http://127.0.0.1:5000/callback/ registreras som en omdirigerings-uri i Spotify Developer Dashboard.
