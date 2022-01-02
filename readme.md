@@ -40,5 +40,5 @@ handler.py är den fil som behöver modifieras. Inom handler.py måste du ange d
 
 maps.html är den fil som behöver modifieras. Inom maps.html måste du ange din API nyckel på rad 58
 
-### Återuppringning av URL
-Återuppringningen och porten listas som standard som http://127.0.0.1 och 5000. Om återuppringningsadressen lämnas som standard, måste http://127.0.0.1:5000/callback/ registreras som en omdirigerings-uri i Spotify Developer Dashboard.
+### Callback URL
+Callback och porten listas som standard som http://127.0.0.1 och 5000. Om Callback-url lämnas som standard, måste http://127.0.0.1:5000/callback/ registreras som en omdirigerings-uri i Spotify Developer Dashboard.
