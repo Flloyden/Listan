@@ -1,6 +1,6 @@
 # Listan
 
-Listan är en webbapplikationsom genererar en spellista baserat på en viss tid med hälp av Google maps API. Spellistan baseras också på vilket typ av färdmedel man anger samt en specifik genre som man väljer tack vare Spotify API. Listan hjälper dig på din kommande resa!
+Listan är en webbapplikationsom genererar en spellista baserat på en viss tid och färdmedel med hälp av Google maps API. Spellistan baseras också på en specifik genre som man väljer tack vare Spotify API. Listan hjälper dig på din kommande resa!
 
 ## Installation
 
