@@ -6,7 +6,7 @@ Listan är en webbapplikationsom genererar en spellista baserat på en viss tid 
 
 OBS: För att kunna köra applikationen måste du lägga till din google maps API samt Spotify klient-id och klienthemlighet
 
-Denna applikationen krävs det att man har python installerat. Kontrollera detta genom att köra: pyton --version
+Denna applikationen kräver det att man har python installerat. Kontrollera detta genom: **python --version** eller **python3 --version**
 
 1. Ladda ner Listan från github och öppna mappen i en terminal, som t.ex. Windows PowerShell. 
 2. Skapa en virtuell miljö genom: python -m venv venv
@@ -21,7 +21,7 @@ För att avsluta applikationen kör Ctrl+C i terminalen
 
 OBS: För att kunna köra applikationen måste du lägga till din google maps API samt Spotify klient-id och klienthemlighet
 
-Denna applikationen krävs det att man har python installerat. Kontrollera detta genom att köra: pyton --version
+Denna applikationen kräver det att man har python installerat. Kontrollera detta genom: **python --version** eller **python3 --version**
 
 1. Ladda ner Listan från github och öppna mappen i en terminal. 
 2. Skapa en virtuell miljö genom: virtualenv venv
