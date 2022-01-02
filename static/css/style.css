@@ -6,6 +6,7 @@ html, body{
     height: 100vh;
     background: linear-gradient(45deg, rgba(209,107,165,1) 0%, rgba(174,96,158,1) 5%, rgba(139,85,148,1) 10%, rgba(104,75,135,1) 20%, rgba(70,64,118,1) 40%, rgba(50,66,116,1) 50%, rgba(28,67,111,1) 60%, rgba(0,67,104,1) 70%, rgba(0,80,109,1) 80%, rgba(0,93,112,1) 90%, rgba(29,105,112,1) 95%, rgba(55,116,112,1) 100%);    
 }
+
 .container {
     display: grid;
     grid-template-columns: 0.7fr 1.6fr 0.7fr;
@@ -49,6 +50,7 @@ html, body{
     margin: 0 0 0 .45em;
     height: 80px;
 }
+
 .logo a {
     color: rgb(28, 24, 22);
 }
@@ -86,7 +88,6 @@ h5{
     text-align: center;
     font-size: 52px;
     font-weight: 800;
-    padding-top: 34px;
 }
 
 .message a{
@@ -113,23 +114,27 @@ h5{
 .main > .login{
     display: grid;
     margin: 0;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
+
 .main > .login > img{
     margin: auto;
 }
+
 .main > .login > a{
     margin: auto;
     margin-top: 10px;
 }
+
 #login-button:hover{
     opacity: 0.9;
 }
+
 #links{
     bottom: 0;
     text-align: center;
@@ -138,19 +143,23 @@ h5{
     transform: translate(-50%, -50%);
     left: 50%;
 }
+
 #links > p{
     color: rgba(230, 230, 230, 0.63);
     font-size: 16px;
 }
+
 #links > p > a{
     color: #007bff !important;
     text-decoration: none;
 }
+
 #links > p > a:hover{
     color: #007bff !important;
     text-decoration: underline;
     opacity: 0.5;
 }
+
 .api{
     padding-top: 200px;
 }
@@ -159,39 +168,16 @@ h1, h2{
     color: white;
     display: none;
 }
-  
-  /* *********** media queries *********** */
-  @media all and (max-width: 990px) {
-    .flex-container {
-      flex-direction: column;
-    }
-    
-    .logo {
-    margin: 0;
-  }
-    
-    .navigation  {
-      width: 100%;
-      justify-content: space-around;
-    }
-  }
-
-
-
-
-
-
-
 
   .switch {
     position: relative;
-    font-family: verdana;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50px;
     margin: auto;
     width: 850px;
     text-align: center;
 }
+
 .switch:before {
     content: ' ';
     position: absolute;
@@ -202,6 +188,7 @@ h1, h2{
     background: #000;
     border-radius: 30px;
 }
+
 .switch__label {
     display: inline-block;
     padding: 33px;
@@ -210,6 +197,7 @@ h1, h2{
     transition: color 200ms ease-out;
     color: rgba(255, 255, 255, 0.5);
 }
+
 .switch__indicator {
     width: 130px;
     height: 90%;
@@ -220,37 +208,46 @@ h1, h2{
     transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
     transform: translate3d(1rem, 0, 0);
 }
+
 .switch input#Pop:checked ~ .switch__indicator {
     border: 4px solid #1db954;
     transform: translate3d(1rem, 0, 0);
 }
+
 .switch input#Rock:checked ~ .switch__indicator {
     border: 4px solid #1db954;
     transform: translate3d(7rem, 0, 0);
 }
+
 .switch input#Party:checked ~ .switch__indicator {
     border: 4px solid #1db954;
     transform: translate3d(14rem, 0, 0);
 }
+
 .switch input#House:checked ~ .switch__indicator {
     border: 4px solid #1db954;
     transform: translate3d(21.5rem, 0, 0);
 }
+
 .switch input#EDM:checked ~ .switch__indicator {
     border: 4px solid #1db954;
     transform: translate3d(28.5rem, 0, 0);
 }
+
 .switch input#Dubstep:checked ~ .switch__indicator {
     border: 4px solid #1db954;
     transform: translate3d(36rem, 0, 0);
 }
+
 .switch input#Metalcore:checked ~ .switch__indicator {
     border: 4px solid #1db954;
     transform: translate3d(45.7rem, 0, 0);
 }
+
 .switch input[type="radio"]:not(:checked), .switch input[type="radio"]:checked {
     display: none;
 }
+
 #submit{
     position: absolute;
     display: block;
@@ -258,6 +255,7 @@ h1, h2{
     left: 40%;
     width: 200px;
 }
+
 input[type=button], input[type=submit], input[type=reset] {
     background: #1db954; 
     border: none;
@@ -270,22 +268,20 @@ input[type=button], input[type=submit], input[type=reset] {
     font-weight: 600;
     font-size: 16px;
     transition: 0.3s;
-  }
+}
+
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
     background: #137a37; 
-  }
+}
   
-
-
-
-  /* Maps */
-  #map {
+/* Maps */
+#map {
     height: 500px;
     width: 100%;
     border-radius: 20px;
-  }
+}
 
-  .controls {
+.controls {
     margin-top: 10px;
     border: 1px solid transparent;
     border-radius: 2px 0 0 2px;
@@ -294,34 +290,32 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
     height: 32px;
     outline: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  }
+}
   
-  #origin-input,
-  #destination-input {
+#origin-input,
+#destination-input {
     background-color: #fff;
-    font-family: Roboto;
     font-size: 15px;
     font-weight: 300;
     margin-left: 12px;
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
     width: 200px;
-  }
+}
   
-  #origin-input:focus,
-  #destination-input:focus {
+#origin-input:focus,
+#destination-input:focus {
     border-color: #4d90fe;
-  }
+}
   
-  #mode-selector {
+#mode-selector {
     color: #fff;
     background-color: #4d90fe;
     margin-left: 12px;
     padding: 5px 11px 0px 11px;
-  }
+}
   
-  #mode-selector label {
-    font-family: Roboto;
+#mode-selector label {
     font-size: 13px;
     font-weight: 300;
-  }
+}
