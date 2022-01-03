@@ -95,6 +95,7 @@ class Handler:
     
     def create_playlist(self, token):
         print("Trying to create playlist")
+        self.get_current_user(token)
         query = "https://api.spotify.com/v1/users/{}/playlists".format(self.user_id)
         test = self.city_names
         res = test.split()
