@@ -23,6 +23,7 @@ class Handler:
         self.average_song_length = 197000 #millisekunder
         self.song_limit = ""
         self.city_names = ""
+        self.user_id = ""
     
     def getUser(self):
         return self.SpotifyOauth.getAuth(self.CLIENT_ID, "{}:{}/callback/".format(self.CALLBACK_URL, self.PORT), self.SCOPE)
@@ -75,6 +76,7 @@ class Handler:
         response_json = response.json()
         user_display_name = response_json["display_name"]
         user_id = response_json["id"]
+        self.user_id = user_id
         return user_display_name, user_id
     
     #Används inte?
@@ -93,7 +95,7 @@ class Handler:
     
     def create_playlist(self, token):
         print("Trying to create playlist")
-        query = "https://api.spotify.com/v1/users/1158761339/playlists"
+        query = "https://api.spotify.com/v1/users/{}/playlists".format(self.user_id)
         test = self.city_names
         res = test.split()
         from_place = str(res[0])[:-1]
