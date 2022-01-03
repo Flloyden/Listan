@@ -11,11 +11,11 @@ class SpotifyOauth:
         self.HEADER = 'application/x-www-form-urlencoded'
         self.REFRESH_TOKEN = ''
         
-    def getAuth(self, client_id, redirect_uri, scope):
+    def getAuth(self, client_id, redirect_uri, scope) -> str:
         data = "{}client_id={}&response_type=code&redirect_uri={}&scope={}".format(self.SPOTIFY_URL_AUTH, client_id, redirect_uri, scope) 
         return data
 
-    def getToken(self, code, client_id, client_secret, redirect_uri):
+    def getToken(self, code, client_id, client_secret, redirect_uri) -> str:
         body = {
             "grant_type": 'authorization_code',
             "code" : code,
@@ -33,12 +33,12 @@ class SpotifyOauth:
         post = requests.post(self.SPOTIFY_URL_TOKEN, params=body, headers=headers)
         return self.handleToken(json.loads(post.text))
         
-    def handleToken(self, response):
+    def handleToken(self, response) -> str:
         auth_head = {"Authorization": "Bearer {}".format(response["access_token"])}
         self.REFRESH_TOKEN = response["refresh_token"]
         return [response["access_token"], auth_head, response["scope"], response["expires_in"]]
 
-    def refreshAuth(self):
+    def refreshAuth(self) -> str:
         body = {
             "grant_type" : "refresh_token",
             "refresh_token" : self.REFRESH_TOKEN

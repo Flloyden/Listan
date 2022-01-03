@@ -25,27 +25,41 @@ class Handler:
         self.city_names = ""
         self.user_id = ""
     
-    def getUser(self):
+    def getUser(self) -> str:
+        '''
+        Returnerar infromation om token, callback url och scope
+        '''
         return self.SpotifyOauth.getAuth(self.CLIENT_ID, "{}:{}/callback/".format(self.CALLBACK_URL, self.PORT), self.SCOPE)
 
-    def getUserToken(self, code):
+    def getUserToken(self, code) -> None:
+        '''
+        Lägger till infromation om token
+        '''
         self.TOKEN_DATA = self.SpotifyOauth.getToken(code, self.CLIENT_ID, self.CLIENT_SECRET, "{}:{}/callback/".format(self.CALLBACK_URL, self.PORT))
     
-    def refreshToken(self, time):
+    def refreshToken(self, time) -> None:
         time.sleep(time)
         self.TOKEN_DATA = self.SpotifyOauth.refreshAuth()
 
-    def getAccessToken(self):
+    def getAccessToken(self) -> str:
+        '''
+        Retuenerar data om spotify token
+        '''
         return self.TOKEN_DATA
 
-    def convert_min_to_milliseconds(self):
+    def convert_min_to_milliseconds(self) -> None:
+        '''
+        Gör om sekunder till millisekunder och lägger till hur många antal låtar som behövs
+        '''
         milliseconds = int(self.song_duration_input) * 1000
         amount_of_songs = milliseconds / self.average_song_length
         songs_required = math.trunc(amount_of_songs)
         self.song_limit = songs_required
-        return milliseconds
 
-    def get_recommendations(self, token):
+    def get_recommendations(self, token) -> None:
+        '''
+        Hämtar antal låtar baserat på genre som användaren valt och lägger till dem i en sträng
+        '''
         print("Finding recommendations...")
         endpoint = "https://api.spotify.com/v1/recommendations?"
         limit = str(self.song_limit)
@@ -68,7 +82,10 @@ class Handler:
 
         self.add_to_playlist(token)
 
-    def get_current_user(self, token):
+    def get_current_user(self, token) -> str:
+        '''
+        Hämtar information om användarenoch returnerar användarnamnet samt user_id
+        '''
         print("Finding current user...")
         query = "https://api.spotify.com/v1/me"
         response = requests.get(query, headers={"Content-type": "application/json", 
@@ -80,7 +97,10 @@ class Handler:
         return user_display_name, user_id
     
     #Används inte?
-    def get_genre(self):
+    def get_genre(self) -> list:
+        '''
+        Hämtar available-genre-seeds från spotify, lägger dem i en lista och returnerar listan 
+        '''
         print("Finding genres...")
         query = "https://api.spotify.com/v1/recommendations/available-genre-seeds"
         response = requests.get(query, headers={"Content-type": "application/json", 
@@ -93,7 +113,10 @@ class Handler:
 
         return self.genres
     
-    def create_playlist(self, token):
+    def create_playlist(self, token) -> str:
+        '''
+        Skapar en spellista och returnerar dess id
+        '''
         print("Trying to create playlist")
         self.get_current_user(token)
         query = "https://api.spotify.com/v1/users/{}/playlists".format(self.user_id)
@@ -119,7 +142,10 @@ class Handler:
         
         return response_json["id"]
 
-    def add_to_playlist(self, token):
+    def add_to_playlist(self, token) -> None:
+        '''
+        Lägger till låtar i den nyss gjorda spellistan
+        '''
         self.new_playlist_id = self.create_playlist(token)
         query = "https://api.spotify.com/v1/playlists/{}/tracks?uris={}".format(self.new_playlist_id, self.tracks)
 
