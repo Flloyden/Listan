@@ -43,16 +43,30 @@
 
           <h3>Tid: <b style="color: white !important;" id="headertag">0</b></h3>
 
-          <form action="{{ url_for('done') }}" method="post" style="text-align: center;">
+          <form action="{{ url_for('done') }}" method="post" style="text-align: center;" name="Form">
             <label for="number" style="color: white; display: none;">Ange tid (min):</label>
             <input style="display: none;" type="number" id="number" name="number">
             <input style="display: none;" type="text" id="city" name="city">
-            <input type="submit" id="submit" value="OK">
+            <input type="submit" id="submit" value="OK" style="display: none;">
           </form>
+
+          <button id="ok"  onclick="myFunction()">OK</button>
 
         </div>
 
       </div>
+
+      <script type="text/javascript">
+        function myFunction() {
+          var x = document.forms["Form"]["number"].value.length;
+          if (x <= 0){
+            alert("Tiden får inte vara 0 min och inte överstiga 5tim");
+            console.log("ERROR")
+          }else{
+            document.getElementById("submit").click(); // Click on the checkbox
+          }
+        }
+      </script>
 
       <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
       <script
