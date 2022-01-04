@@ -4,46 +4,33 @@ Listan är en webbapplikationsom genererar en spellista baserat på en viss tid 
 
 ## Installation
 
-OBS: För att kunna köra applikationen måste du lägga till din google maps API samt Spotify klient-id och klienthemlighet
+OBS: För att kunna köra applikationen måste du lägga till google maps API-nyckel samt Spotify klient-id och klienthemlighet
 
 Denna applikationen kräver det att man har python installerat. Kontrollera detta genom: **python --version** eller **python3 --version**
 
-1. Fixa en spotify applikation (instruktioner längre ner)
-2. Ladda ner Listan från github och öppna mappen i en terminal, som t.ex. Windows PowerShell. 
-3. Skapa en virtuell miljö genom: python -m venv venv
-4. Aktivera sedan miljön med: venv\Scripts\activate
-5. Kör kommandot: pip install -r requirements.txt
-6. Efter allt är installerat kan du starta applikationen med: flask run
-7. Nu kan du öppna applikationen i din webbläsare på: http://127.0.0.1:5000/
+1. Ladda ner Listan från github och öppna mappen i en terminal, som t.ex. Windows PowerShell. 
+2. Skapa en virtuell miljö genom: python -m venv venv
+3. Aktivera sedan miljön med: venv\Scripts\activate
+4. Kör kommandot: pip install -r requirements.txt
+5. Efter allt är installerat kan du starta applikationen med: flask run
+6. Nu kan du öppna applikationen i din webbläsare på: http://127.0.0.1:5000/
 
 För att avsluta applikationen kör Ctrl+C i terminalen
 
 ## Installation MacOS
 
-OBS: För att kunna köra applikationen måste du lägga till din google maps API samt Spotify klient-id och klienthemlighet
+OBS: För att kunna köra applikationen måste du lägga till google maps API-nyckel samt Spotify klient-id och klienthemlighet
 
 Denna applikationen kräver det att man har python installerat. Kontrollera detta genom: **python --version** eller **python3 --version**
 
-1. Fixa en spotify applikation (instruktioner längre ner)
-2. Ladda ner Listan från github och öppna mappen i en terminal. 
-3. Skapa en virtuell miljö genom: virtualenv venv
-4. Aktivera sedan miljön med: source venv/bin/activate
-5. Kör kommandot: pip install -r requirements.txt
-6. Efter allt är installerat kan du starta applikationen med: flask run
-7. Nu kan du öppna applikationen i din webbläsare på: http://127.0.0.1:5000/
+1. Ladda ner Listan från github och öppna mappen i en terminal. 
+2. Skapa en virtuell miljö genom: virtualenv venv
+3. Aktivera sedan miljön med: source venv/bin/activate
+4. Kör kommandot: pip install -r requirements.txt
+5. Efter allt är installerat kan du starta applikationen med: flask run
+6. Nu kan du öppna applikationen i din webbläsare på: http://127.0.0.1:5000/
 
 För att avsluta applikationen kör Ctrl+C i terminalen
-
-### Spotify applikation
-För att denna applikation ska kunna fungera så måste du skapa en applikation på spotify.
-
-1. Gå till https://developer.spotify.com/dashboard/ och logga in
-2. Tryck på **CREATE AN APP** och fyll i nödvändig information
-3. Tryck sedan på **edit settings** lägg till **http://127.0.0.1:5000/callback/** som Redirect URI och spara
-4. Spara **Client ID** och **Client Secret** för att sedan klistra in dem i handler.py
-
-### Callback URL
-Callback och porten listas som standard som http://127.0.0.1 och 5000. Om Callback-url lämnas som standard, måste http://127.0.0.1:5000/callback/ registreras som en omdirigerings-uri i Spotify Developer Dashboard.
 
 ### Lägg till klient-ID och klienthemlighet
 
