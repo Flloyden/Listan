@@ -12,8 +12,9 @@ Denna applikationen kräver det att man har python installerat. Kontrollera dett
 2. Skapa en virtuell miljö genom: python -m venv venv
 3. Aktivera sedan miljön med: venv\Scripts\activate
 4. Kör kommandot: pip install -r requirements.txt
-5. Efter allt är installerat kan du starta applikationen med: flask run
-6. Nu kan du öppna applikationen i din webbläsare på: http://127.0.0.1:5000/
+5. Lägg nu till google maps API-nyckeln samt Spotify Klient-id och klienthemlighet
+6. Efter allt är installerat kan du starta applikationen med: flask run
+7. Nu kan du öppna applikationen i din webbläsare på: http://127.0.0.1:5000/
 
 För att avsluta applikationen kör Ctrl+C i terminalen
 
@@ -27,8 +28,9 @@ Denna applikationen kräver det att man har python installerat. Kontrollera dett
 2. Skapa en virtuell miljö genom: virtualenv venv
 3. Aktivera sedan miljön med: source venv/bin/activate
 4. Kör kommandot: pip install -r requirements.txt
-5. Efter allt är installerat kan du starta applikationen med: flask run
-6. Nu kan du öppna applikationen i din webbläsare på: http://127.0.0.1:5000/
+5. Lägg nu till google maps API-nyckeln samt Spotify Klient-id och klienthemlighet
+6. Efter allt är installerat kan du starta applikationen med: flask run
+7. Nu kan du öppna applikationen i din webbläsare på: http://127.0.0.1:5000/
 
 För att avsluta applikationen kör Ctrl+C i terminalen
 
