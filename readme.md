@@ -52,3 +52,9 @@ handler.py är den fil som behöver modifieras. Inom handler.py måste du ange d
 ### Lägg till Google maps API
 
 maps.html är den fil som behöver modifieras. Inom maps.html måste du ange din API nyckel på rad 59
+
+### ERROR: scripts is disabled on this system
+
+Som administratör kan du ställa in körningspolicyn genom att skriva detta i ditt PowerShell-fönster: **Set-ExecutionPolicy RemoteSigned** 
+
+När du är klar kan du ställa tillbaka policyn till dess standardvärde med: **Set-ExecutionPolicy Restricted**
