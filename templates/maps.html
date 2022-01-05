@@ -58,13 +58,16 @@
 
       <script type="text/javascript">
         function myFunction() {
-          var x = document.forms["Form"]["number"].value.length;
-          if (x <= 0){
-            alert("Tiden får inte vara 0 min och inte överstiga 5tim");
-            console.log("ERROR")
-          }else{
-            document.getElementById("submit").click(); // Click on the checkbox
-          }
+            // Get the value of the input field with id="numb"
+            let x = document.getElementById("number").value;
+            // If x is Not a Number or less than one or greater than 10
+            let text;
+            if (isNaN(x) || x < 5 || x > 18100) {
+                alert("Tiden får inte vara mindre än 5 min och inte överstiga 5tim");
+                console.log("ERROR")
+            } else {
+                document.getElementById("submit").click(); // Click on the checkbox
+            }
         }
       </script>
 
