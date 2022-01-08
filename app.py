@@ -25,16 +25,16 @@ def callback():
     h.getUserToken(request.args['code'])
     global token
     token = h.getAccessToken()
-    return redirect("/success")
+    return redirect("/welcome")
 
-@app.route("/success")
-def success():
+@app.route("/welcome")
+def welcome():
     '''
     Välkommnar användaren
     '''
     h = Handler()
     user_data = h.get_current_user(token)
-    return render_template("success.html", data=user_data, genres="genres")
+    return render_template("welcome.html", data=user_data, genres="genres")
 
 @app.route("/genres", methods=['POST'])
 def genres():
