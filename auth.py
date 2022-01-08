@@ -2,7 +2,7 @@ import base64
 import json
 import requests
 
-class SpotifyOauth:
+class Auth:
 
     def __init__(self) -> None:
         self.SPOTIFY_URL_AUTH = 'https://accounts.spotify.com/authorize/?'

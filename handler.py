@@ -1,11 +1,11 @@
-from flask_spotify_auth import SpotifyOauth
+from auth import Auth
 import json
 import requests
 import math
 
 class Handler:
     def __init__(self) -> None:
-        self.SpotifyOauth = SpotifyOauth()
+        self.Auth = Auth()
         self.CLIENT_ID = "YOUR_CLIENT_ID"
         self.CLIENT_SECRET = "YOUR_CLIENT_SECRET"
         self.CALLBACK_URL = "http://127.0.0.1"
@@ -29,17 +29,17 @@ class Handler:
         '''
         Returnerar infromation om token, callback url och scope
         '''
-        return self.SpotifyOauth.getAuth(self.CLIENT_ID, "{}:{}/callback/".format(self.CALLBACK_URL, self.PORT), self.SCOPE)
+        return self.Auth.getAuth(self.CLIENT_ID, "{}:{}/callback/".format(self.CALLBACK_URL, self.PORT), self.SCOPE)
 
     def getUserToken(self, code) -> None:
         '''
         Lägger till infromation om token
         '''
-        self.TOKEN_DATA = self.SpotifyOauth.getToken(code, self.CLIENT_ID, self.CLIENT_SECRET, "{}:{}/callback/".format(self.CALLBACK_URL, self.PORT))
+        self.TOKEN_DATA = self.Auth.getToken(code, self.CLIENT_ID, self.CLIENT_SECRET, "{}:{}/callback/".format(self.CALLBACK_URL, self.PORT))
     
     def refreshToken(self, time) -> None:
         time.sleep(time)
-        self.TOKEN_DATA = self.SpotifyOauth.refreshAuth()
+        self.TOKEN_DATA = self.Auth.refreshAuth()
 
     def getAccessToken(self) -> str:
         '''
