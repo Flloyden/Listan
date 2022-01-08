@@ -279,6 +279,7 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
     height: 500px;
     width: 100%;
     border-radius: 20px;
+    min-width: 770px !important;
 }
 
 .controls {
@@ -313,11 +314,16 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
     background-color: #4d90fe;
     margin-left: 12px;
     padding: 5px 11px 0px 11px;
+    background-color: #1db954;
+}
+.gm-fullscreen-control{
+    display: none !important;
+    height: 0px !important;
 }
   
 #mode-selector label {
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 #ok{
