@@ -14,7 +14,7 @@ def index():
     '''
     h = Handler()
     authorize = h.getUser()
-    return render_template("layout.html", authorize=authorize)
+    return render_template("index.html", authorize=authorize)
 
 @app.route('/callback/')
 def callback():
