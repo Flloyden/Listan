@@ -6,12 +6,12 @@ import math
 class Handler:
     def __init__(self) -> None:
         self.Auth = Auth()
-        self.CLIENT_ID = "YOUR_CLIENT_ID"
-        self.CLIENT_SECRET = "YOUR_CLIENT_SECRET"
-        self.CALLBACK_URL = "http://127.0.0.1"
-        self.PORT = "5000"
-        self.SCOPE = "user-read-private user-read-email user-library-modify playlist-modify-private playlist-read-collaborative playlist-modify-public user-library-read playlist-read-private"
-        self.TOKEN_DATA = ""
+        self.client_id = "YOUR_CLIENT_ID"
+        self.client_secret = "YOUR_CLIENT_SECRET"
+        self.callback_url = "http://127.0.0.1"
+        self.port = "5000"
+        self.scope = "user-read-private user-read-email user-library-modify playlist-modify-private playlist-read-collaborative playlist-modify-public user-library-read playlist-read-private"
+        self.token_data = ""
         self.spotify_token = ""
         self.tracks = ""
         self.new_playlist_id = ""
@@ -29,23 +29,23 @@ class Handler:
         '''
         Returnerar infromation om token, callback url och scope
         '''
-        return self.Auth.getAuth(self.CLIENT_ID, "{}:{}/callback/".format(self.CALLBACK_URL, self.PORT), self.SCOPE)
+        return self.Auth.getAuth(self.client_id, "{}:{}/callback/".format(self.callback_url, self.port), self.scope)
 
     def getUserToken(self, code) -> None:
         '''
         Lägger till infromation om token
         '''
-        self.TOKEN_DATA = self.Auth.getToken(code, self.CLIENT_ID, self.CLIENT_SECRET, "{}:{}/callback/".format(self.CALLBACK_URL, self.PORT))
+        self.token_data = self.Auth.getToken(code, self.client_id, self.client_secret, "{}:{}/callback/".format(self.callback_url, self.port))
     
     def refreshToken(self, time) -> None:
         time.sleep(time)
-        self.TOKEN_DATA = self.Auth.refreshAuth()
+        self.token_data = self.Auth.refreshAuth()
 
     def getAccessToken(self) -> str:
         '''
         Retuenerar data om spotify token
         '''
-        return self.TOKEN_DATA
+        return self.token_data
 
     def convert_min_to_milliseconds(self) -> None:
         '''
