@@ -9,7 +9,7 @@ OBS: För att kunna köra applikationen måste du lägga till google maps API-ny
 OBS! Denna applikation kräver att man har python installerat. Kontrollera detta genom: **python --version**
 
 1. Ladda ner Listan från github och öppna mappen i en terminal
-2. Skapa en virtuell miljö genom: **python3 -m venv venv** eller **python -m venv venv**
+2. Skapa en virtuell miljö genom: **python -m venv venv** eller **python3 -m venv venv**
 3. Aktivera sedan miljön med: **venv\Scripts\activate**
 4. Kör kommandot: **pip install -r requirements.txt**
 5. Lägg nu till google maps API-nyckeln samt Spotify Klient-id och klienthemlighet
@@ -25,7 +25,7 @@ OBS: För att kunna köra applikationen måste du lägga till google maps API-ny
 OBS! Denna applikation kräver att man har python installerat. Kontrollera detta genom: **python --version**
 
 1. Ladda ner Listan från github och öppna mappen i en terminal. 
-2. Skapa en virtuell miljö genom: **python3 -m venv venv** eller **python -m venv venv**
+2. Skapa en virtuell miljö genom: **python -m venv venv** eller **python3 -m venv venv**
 3. Aktivera sedan miljön med: **source venv/bin/activate**
 4. Kör kommandot: **pip install -r requirements.txt**
 5. Lägg nu till google maps API-nyckeln samt Spotify Klient-id och klienthemlighet
