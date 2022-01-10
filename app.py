@@ -54,7 +54,6 @@ def maps():
     return render_template("maps.html")
 
 @app.route('/success', methods=['POST'])
-#Generera spellistan
 def success():
     '''
     Genererar en spellista
