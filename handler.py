@@ -12,15 +12,13 @@ class Handler:
         self.port = "5000"
         self.scope = "user-read-private user-read-email user-library-modify playlist-modify-private playlist-read-collaborative playlist-modify-public user-library-read playlist-read-private"
         self.token_data = ""
-        self.spotify_token = ""
         self.tracks = ""
         self.new_playlist_id = ""
         self.current_user = ""
-        self.genres = []
         self.song_duration = []
         self.song_duration_input = 0
         self.genre = ""
-        self.average_song_length = 197000 #millisekunder
+        self.average_song_length = 197000
         self.song_limit = ""
         self.city_names = ""
         self.user_id = ""
@@ -60,14 +58,13 @@ class Handler:
         '''
         Hämtar antal låtar baserat på genre som användaren valt och lägger till dem i en sträng
         '''
-        print("Finding recommendations...")
         endpoint = "https://api.spotify.com/v1/recommendations?"
         limit = str(self.song_limit)
         seed_artist = ""
         seed_genres = self.genre
         market = "SE"
         seed_tracks = ""
-        query = f"{endpoint}limit={limit}&market={market}&seed_genres={seed_genres}&seed_artists={seed_artist}&seed_tracks={seed_tracks}"
+        query = "{}limit={}&market={}&seed_genres={}&seed_artists={}&seed_tracks={}".format(endpoint, limit, market, seed_genres, seed_artist, seed_tracks)
         response = requests.get(query, headers={"Content-type": "application/json", 
             "Authorization": "Bearer {}".format(token)})
         response_json = response.json()
@@ -86,7 +83,6 @@ class Handler:
         '''
         Hämtar information om användarenoch returnerar användarnamnet samt user_id
         '''
-        print("Finding current user...")
         query = "https://api.spotify.com/v1/me"
         response = requests.get(query, headers={"Content-type": "application/json", 
             "Authorization": "Bearer {}".format(token)})
@@ -96,28 +92,10 @@ class Handler:
         self.user_id = user_id
         return user_display_name, user_id
     
-    #Används inte?
-    def get_genre(self) -> list:
-        '''
-        Hämtar available-genre-seeds från spotify, lägger dem i en lista och returnerar listan 
-        '''
-        print("Finding genres...")
-        query = "https://api.spotify.com/v1/recommendations/available-genre-seeds"
-        response = requests.get(query, headers={"Content-type": "application/json", 
-            "Authorization": "Bearer {}".format(self.spotify_token)})
-
-        response_json = response.json()
-
-        for i in response_json["genres"]:
-            self.genres.append(i)
-
-        return self.genres
-    
     def create_playlist(self, token) -> str:
         '''
         Skapar en spellista och returnerar dess id
         '''
-        print("Trying to create playlist")
         self.get_current_user(token)
         query = "https://api.spotify.com/v1/users/{}/playlists".format(self.user_id)
         test = self.city_names
@@ -148,8 +126,6 @@ class Handler:
         '''
         self.new_playlist_id = self.create_playlist(token)
         query = "https://api.spotify.com/v1/playlists/{}/tracks?uris={}".format(self.new_playlist_id, self.tracks)
-
-        print("Trying to add songs to playlist")
 
         response = requests.post(query, headers={
             "Content-type": "application/json", 
