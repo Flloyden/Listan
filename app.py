@@ -3,7 +3,6 @@ from handler import Handler
 
 app = Flask(__name__)
 
-#globala variabler
 token = ""
 genre = ""
         
