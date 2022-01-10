@@ -8,9 +8,9 @@ Listan är en webbapplikation som genererar en spellista baserat på en viss tid
 
 1. Ladda ner Listan från github och öppna mappen i en terminal
 2. Skapa en virtuell miljö genom: **python -m venv venv** eller **python3 -m venv venv**
-3. Aktivera sedan miljön med: **venv\Scripts\activate**
+3. Aktivera sedan miljön med: **venv\Scripts\activate** (Om du får **ERROR: scripts is disabled on this system** finns instruktioner på hur detta går att lösa längre ner i dokumentet)
 4. Kör kommandot: **pip install -r requirements.txt**
-5. Lägg nu till google maps API-nyckeln samt Spotify Klient-id och klienthemlighet
+5. Lägg nu till google maps API-nyckeln samt Spotify Klient-id och klienthemlighet (se instruktioner längre ner i dokumentet)
 6. Efter allt är installerat kan du starta applikationen med: **flask run**
 7. Nu kan du öppna applikationen i din webbläsare på: http://127.0.0.1:5000/
 
@@ -24,7 +24,7 @@ För att avsluta applikationen kör **Ctrl+C** i terminalen
 2. Skapa en virtuell miljö genom: **python -m venv venv** eller **python3 -m venv venv**
 3. Aktivera sedan miljön med: **source venv/bin/activate**
 4. Kör kommandot: **pip install -r requirements.txt**
-5. Lägg nu till google maps API-nyckeln samt Spotify Klient-id och klienthemlighet
+5. Lägg nu till google maps API-nyckeln samt Spotify Klient-id och klienthemlighet (se instruktioner längre ner i dokumentet)
 6. Efter allt är installerat kan du starta applikationen med: **flask run**
 7. Nu kan du öppna applikationen i din webbläsare på: http://127.0.0.1:5000/
 
