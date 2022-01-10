@@ -15,9 +15,32 @@
         <div class="main">
           <div class="message">
             <h3>voilà</h3>
-            <h4><a href="https://open.spotify.com/playlist/{{ link }}" target="_blank">Visa mig spellistan</a></h4>
-            <h4><a href="/welcome">Testa igen!</a></h4>
+            <h4>Spellistan har skapats. Trevlig resa!</h4>
           </div>
+
+          <div class="cards-list">
+              
+            <a href="https://open.spotify.com/playlist/{{ link }}" target="_blank" id="success">
+              <div class="card 1">
+                <div class="card_image">
+                  <img src="{{ url_for('static', filename='/img/spotify-logo.png')}}" /> </div>
+                <div class="card_title title-white">
+                  <p>Lyssna nu!</p>
+                </div>
+              </div>
+            </a>
+            
+            <a href="/welcome">
+              <div class="card 2">
+                <div class="card_image">
+                  <img src="{{ url_for('static', filename='/img/home-logo.png')}}" />
+                  </div>
+                <div class="card_title title-white">
+                  <p>Hem</p>
+                </div>
+              </div>
+            </a>
+
         </div>
       </div>
 </body>
