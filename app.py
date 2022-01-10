@@ -53,9 +53,9 @@ def maps():
     genre = data
     return render_template("maps.html")
 
-@app.route('/done', methods=['POST'])
+@app.route('/success', methods=['POST'])
 #Generera spellistan
-def done():
+def success():
     '''
     Genererar en spellista
     '''
@@ -69,7 +69,7 @@ def done():
     h.convert_min_to_milliseconds()
     h.get_recommendations(token)
     link = h.new_playlist_id
-    return render_template("done.html", link=link)
+    return render_template("success.html", link=link)
 
 if __name__ == "__main__":
   app.run()
