@@ -2,7 +2,7 @@
 
 Listan är en webbapplikation som genererar en spellista baserat på en viss tid och färdmedel med hälp av Google maps API. Spellistan baseras också på en specifik genre som man väljer tack vare Spotify API. Listan hjälper dig på din kommande resa!
 
-## Installation
+## Installation och körning
 
 **OBS!** För att kunna köra applikationen måste du lägga till google Maps API-nyckel samt Spotify klient-id och klienthemlighet i rätt fil. Denna applikation kräver att man har python installerat. Kontrollera detta genom: python --version
 
@@ -16,7 +16,7 @@ Listan är en webbapplikation som genererar en spellista baserat på en viss tid
 
 För att avsluta applikationen kör **Ctrl+C** i terminalen
 
-## Installation MacOS
+## Installation och körning MacOS
 
 **OBS!** För att kunna köra applikationen måste du lägga till google Maps API-nyckel samt Spotify klient-id och klienthemlighet i rätt fil. Denna applikation kräver att man har python installerat. Kontrollera detta genom: python --version
 
