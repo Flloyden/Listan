@@ -15,9 +15,9 @@
         
         <div class="main">
             <div class="login">
-                <img src="{{url_for('static', filename='/img/listan.png')}}"/>
+                <img src="{{url_for('static', filename='/img/listan.png')}}" alt="logotyp"/>
                 <h1>Upptäck ny musik genom att skapa en anpassad Spotify-spellista baserad på dina favoritlåtar</h1>
-                <a href="{{ authorize }}"><img id="login-button" src="{{url_for('static', filename='/img/login.png')}}"/></a>
+                <a href="{{ authorize }}"><img id="login-button" src="{{url_for('static', filename='/img/login.png')}}" alt="logga-in-knapp"/></a>
                 <h5>*Vi använder Spotifys säkra inloggning för att ansluta till ditt konto.</h5>
                 {% block content %}
 

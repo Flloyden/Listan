@@ -23,7 +23,7 @@
             <a href="https://open.spotify.com/playlist/{{ link }}" target="_blank" id="success">
               <div class="card 1">
                 <div class="card_image">
-                  <img src="{{ url_for('static', filename='/img/spotify-logo.png')}}" /> </div>
+                  <img src="{{ url_for('static', filename='/img/spotify-logo.png')}}" alt="bild-på-spotify-logga"/> </div>
                 <div class="card_title title-white">
                   <p>Lyssna nu!</p>
                 </div>
@@ -33,7 +33,7 @@
             <a href="/welcome">
               <div class="card 2">
                 <div class="card_image">
-                  <img src="{{ url_for('static', filename='/img/home-logo.png')}}" />
+                  <img src="{{ url_for('static', filename='/img/home-logo.png')}}" alt="bild-på-hemknapp"/>
                   </div>
                 <div class="card_title title-white">
                   <p>Hem</p>
@@ -41,7 +41,8 @@
               </div>
             </a>
 
+          </div>
         </div>
-      </div>
+    </div>
 </body>
 </html>

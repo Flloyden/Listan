@@ -127,17 +127,15 @@ function initMap() {
 
                     var results = response.rows[0].elements;
                       var element = results[0];
-                      console.log(element)
-                      var distance = element.distance.text;
                       var duration = element.duration.text;
-                      var duration_seconds = element.duration.value
+                      var duration_seconds = element.duration.value;
                       var from = response.originAddresses;
                       var to = response.destinationAddresses;
                       document.getElementById("number").setAttribute('value',duration_seconds);
                       document.getElementById("city").setAttribute('value',from + " " + to);
                       document.getElementById("headertag").innerHTML = duration;
                 } else {
-                  window.alert("Not great at all")
+                  window.alert("Not great at all");
                 }
               }
 
